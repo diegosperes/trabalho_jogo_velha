@@ -18,9 +18,9 @@ public class RegraSegundaRodadaCasa8 implements RegrasGerais {
 	@Override
 	public void RegraGeral(StringBuilder valor, boolean jogada, String opcao) {
 		if(opcao.equals("X") && opcao !=null){
-			
+			if ( valor.toString().equals("---*-O-*-%s"+opcao+"%s"+opcao+"") && jogada ) { valor.setLength(0); valor.append("---*-O-*O%s"+opcao+"%s"+opcao+""); jogada = false;} //8,1*
 		}else if (opcao.equals("O") && opcao !=null){
-			
+			if ( valor.toString().equals("---*-X-*-%s"+opcao+"%s"+opcao+"") && jogada ) { valor.setLength(0); valor.append("---*-X-*X%s"+opcao+"%s"+opcao+""); jogada = false;} //8,1*
 		}
 	}
 

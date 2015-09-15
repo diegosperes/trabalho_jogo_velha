@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jogodavelhaEE.src.model.regras.terceiraJogada;
+package jogodavelhaEE.src.model.regras.terceiraJogada.casa1;
 
 import jogodavelhaEE.src.model.RegrasGerais;
 import jogodavelhaEE.src.model.util.OpcaoDeJogo;

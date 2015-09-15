@@ -18,8 +18,13 @@ public class RegraSegundaRodadaCasa6 implements RegrasGerais {
 	@Override
 	public void RegraGeral(StringBuilder valor, boolean jogada, String opcao) {
 		if(opcao.equals("X") && opcao !=null){
-			
+			if ( valor.toString().equals("---*-O%s"+opcao+"*%s"+opcao+"--") && jogada ) { valor.setLength(0); valor.append("-O-*-O%s"+opcao+"*%s"+opcao+"--"); jogada = false;} //6,1*
+			 if ( valor.toString().equals("---*-O%s"+opcao+"*-%s"+opcao+"-") && jogada ) { valor.setLength(0); valor.append("---*-O%s"+opcao+"*-%s"+opcao+"O"); jogada = false;} //6,2*
+			 if ( valor.toString().equals("---*-O%s"+opcao+"*--%s"+opcao+"") && jogada ) { valor.setLength(0); valor.append("--O*-O%s"+opcao+"*--%s"+opcao+""); jogada = false;} //6,3*
 		}else if (opcao.equals("O") && opcao !=null){
+			if ( valor.toString().equals("---*-X%s"+opcao+"*%s"+opcao+"--") && jogada ) { valor.setLength(0); valor.append("-X-*-X%s"+opcao+"*%s"+opcao+"--"); jogada = false;} //6,1*
+			 if ( valor.toString().equals("---*-X%s"+opcao+"*-%s"+opcao+"-") && jogada ) { valor.setLength(0); valor.append("---*-X%s"+opcao+"*-%s"+opcao+"X"); jogada = false;} //6,2*
+			 if ( valor.toString().equals("---*-X%s"+opcao+"*--%s"+opcao+"") && jogada ) { valor.setLength(0); valor.append("--X*-X%s"+opcao+"*--%s"+opcao+""); jogada = false;} //6,3*
 			
 		}
 	}
@@ -29,8 +34,10 @@ public class RegraSegundaRodadaCasa6 implements RegrasGerais {
 	 */
 	@Override
 	public OpcaoDeJogo opcaoDeJogo(String opcao) {
-		// TODO Auto-generated method stub
-		return null;
+		if (opcao == "x") {
+			return OpcaoDeJogo.O;
+		}
+		return OpcaoDeJogo.X;
 	}
 
 }
