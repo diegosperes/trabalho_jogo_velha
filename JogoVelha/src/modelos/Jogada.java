@@ -26,8 +26,11 @@ public class Jogada {
 			ResultSet resultado = st.executeQuery(query);
 
 			// Atribui o primeiro resultado
-			resultado.first();
-			acao = resultado.getString("acao");
+			if(resultado.next()){
+				resultado.first();
+				acao = resultado.getString("acao");
+			}
+
 			st.close();
 
 		} catch (Exception e) {

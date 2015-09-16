@@ -151,7 +151,8 @@ class main{
 	
 	public static void inteligenciaArtificial() {
 		 Jogada jogada = new Jogada(); 
+		 String acao = jogada.getJogada(valor.toString());
 		 valor.setLength(0);
-		 valor.append(jogada.getJogada(valor.toString()));		 
+		 valor.append(acao);
 	}
 }
